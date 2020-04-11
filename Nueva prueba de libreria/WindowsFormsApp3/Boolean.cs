@@ -58,34 +58,37 @@ namespace WindowsFormsApp3
             return pol;
         }
 
-        public static string AB(List<int> pol1, List<int> pol2)
+        public static string AB(List<int> expresionBooleana1, List<int> expresionBooleana2)
         {
             List<int> mov1 = new List<int>();
             List<int> mov2 = new List<int>();
             int c = 0;
             int apuntador = 0;
 
-            for (int i = 0; i < pol1.Count; i++)
+            for (int i = 0; i < expresionBooleana1.Count; i++)
             {
-                if (pol1[i] == pol2[i])
+                //Si tienen los mismos valores entonces no se pueden cancelar
+                if (expresionBooleana1[i] == expresionBooleana2[i])
                 {
                     mov1.Add(0);
                     mov2.Add(0);
                     // C = c+1 es lo mismo que c++
                     c++;
                 }
+                //En este caso como tienen valores diferentes se van a cancelar
                 else
                 {
-                    mov1.Add(pol1[i]);
-                    mov2.Add(pol2[i]);
+                    mov1.Add(expresionBooleana1[i]);
+                    mov2.Add(expresionBooleana2[i]);
                     apuntador = i;
                 }
             }
 
+            //Si hay una variable diferente se puede cancelar
             if (c == 3)
-                return UnaVariable(mov1, mov2, pol1, pol2, apuntador);
+                return UnaVariable(mov1, mov2, expresionBooleana1, expresionBooleana2, apuntador);
             else
-                return Iguales(pol1, pol2);
+                return Iguales(expresionBooleana1, expresionBooleana2);
         }
 
         public static void Modificar(List<int> mov1, List<int> mov2, List<int> pol1, List<int> pol2)
@@ -143,7 +146,7 @@ namespace WindowsFormsApp3
                 //Como los dos casos son lo mismo en todos las opciones todo lo pongo 
                 //en el mismo bloque pero modifico la condición para que acepte los 
                 //dos
-                if (resnum[i] != 1 && (pol1[i] == 1 || pol1[i] == 2))
+                if (resnum[i] != 1 && pol1[i] == 1 )
                 {
                     if (i == 0)
                         res = "A";
@@ -153,6 +156,16 @@ namespace WindowsFormsApp3
                         res += "C";
                     else if (i == 3)
                         res += "D";
+                }else if(resnum[i] != 1 && pol1[i] == 2)
+                {
+                    if(i == 0)
+                        res = "!A";
+                    else if (i == 1)
+                        res += "!B";
+                    else if (i == 2)
+                        res += "!C";
+                    else if (i == 3)
+                        res += "!D";
                 }
             }
             Modificar(mov1, mov2, pol1, pol2);
@@ -161,8 +174,11 @@ namespace WindowsFormsApp3
 
         public static string Iguales(List<int> pol1, List<int> pol2)
         {
-            string res1 = "";
-            string res2 = "";
+            
+            string res = "";
+            
+            //string res2 = "";
+            
 
             /*
             for (int i = 0; i < pol1.Count; i++)
@@ -222,17 +238,28 @@ namespace WindowsFormsApp3
 
             for (int i = 0; i < pol1.Count(); i++)
             {
-                if (pol1[i] == 1 || pol1[i] == 2)
+                if (pol1[i] == 1)
                 {
                     if (i == 0)
-                        res1 = "A";
+                        res = "A";
                     else if (i == 1)
-                        res1 += "B";
+                        res += "B";
                     else if (i == 2)
-                        res1 += "C";
+                        res += "C";
                     else if (i == 3)
-                        res1 += "D";
+                        res += "D";
+                }else if(pol1[i] == 2)
+                {
+                    if (i == 0)
+                        res = "!A";
+                    else if (i == 1)
+                        res += "!B";
+                    else if (i == 2)
+                        res += "!C";
+                    else if (i == 3)
+                        res += "!D";
                 }
+                /*
                 if (pol2[i] == 1 || pol2[i] == 2)
                 {
                     if (i == 0)
@@ -243,9 +270,9 @@ namespace WindowsFormsApp3
                         res2 += "C";
                     else if (i == 3)
                         res2 += "D";
-                }
+                }*/
             }
-            string res = res1 + " + " + res2;
+            //string res = res1 + " + " + res2;
             return res;
         }
     }
