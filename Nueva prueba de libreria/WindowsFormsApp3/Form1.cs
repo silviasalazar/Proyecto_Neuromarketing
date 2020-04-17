@@ -81,7 +81,20 @@ namespace WindowsFormsApp3
         {
             List<List<double>> matrix = new List<List<double>>();
             matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
-            MessageBox.Show(Booleanos.Media(matrix).ToString());
+            double media = Booleanos.Media(matrix);
+            MessageBox.Show(media.ToString());
+            if (dataGridViewrValores.Rows.Count >= 2)
+            {
+                BooleanExpresionList bel = new BooleanExpresionList();
+                for(int i = 0; i < matrix.Count; i++)
+                {
+                    BooleanExpresion be = new BooleanExpresion(Booleanos2.Polaridad(matrix[i], media));
+                    bel.Add(be);
+                }
+                // bel.IterativeSimplify();
+                txt_res.Text = bel.ToString();
+            }
+
         }
 
 

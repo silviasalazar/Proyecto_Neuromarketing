@@ -1,31 +1,42 @@
+﻿using System;
 using System.Collections.Generic;
-using System;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Suma_de_expresiones_booleanas
+namespace WindowsFormsApp3
 {
-    class BooleanExpresionList{
+    class BooleanExpresionList
+    {
         public List<BooleanExpresion> Expresions;
 
-        public BooleanExpresionList(){
+        public BooleanExpresionList()
+        {
             Expresions = new List<BooleanExpresion>();
         }
 
-        public void Add(BooleanExpresion booleanExpresion){
+        public void Add(BooleanExpresion booleanExpresion)
+        {
             List<BooleanExpresion> temp = Expresions;
-            for(int i = 0; i < Expresions.Count; i++){
-                 if(BooleanLibrary.AreReducible(Expresions[i], booleanExpresion)){
-                    temp[i] = BooleanLibrary.Reduction(Expresions[i],booleanExpresion);
+            for (int i = 0; i < Expresions.Count; i++)
+            {
+                if (BooleanLibrary.AreReducible(Expresions[i], booleanExpresion))
+                {
+                    temp[i] = BooleanLibrary.Reduction(Expresions[i], booleanExpresion);
                     return;
                 }
             }
-            Expresions.Add(booleanExpresion);                           
+            Expresions.Add(booleanExpresion);
         }
 
-        public void Simplify(){
-            for(int i = 0; i < Expresions.Count - 1; i++){
+        public void Simplify()
+        {
+            for (int i = 0; i < Expresions.Count - 1; i++)
+            {
                 for (int j = i + 1; j < Expresions.Count; j++)
                 {
-                    if(BooleanLibrary.AreReducible(Expresions[i], Expresions[j])){
+                    if (BooleanLibrary.AreReducible(Expresions[i], Expresions[j]))
+                    {
                         Expresions[i] = BooleanLibrary.Reduction(Expresions[i], Expresions[j]);
                         Expresions.RemoveAt(j);
                     }
@@ -33,11 +44,13 @@ namespace Suma_de_expresiones_booleanas
             }
         }
 
-        public void IterativeSimplify(){
+        public void IterativeSimplify()
+        {
             int error, previus = Expresions.Count;
             Simplify();
             error = Expresions.Count - previus;
-            while(error != 0){
+            while (error != 0)
+            {
                 previus = Expresions.Count;
                 Simplify();
                 error = Expresions.Count - previus;
@@ -49,7 +62,7 @@ namespace Suma_de_expresiones_booleanas
             string text = "";
             for(int i = 0; i < Expresions.Count - 1; i++)
             {
-                text += Expresions[i];
+                text += Expresions[i].ToString();
                 text += " + ";
             }
             text += Expresions[Expresions.Count - 1];

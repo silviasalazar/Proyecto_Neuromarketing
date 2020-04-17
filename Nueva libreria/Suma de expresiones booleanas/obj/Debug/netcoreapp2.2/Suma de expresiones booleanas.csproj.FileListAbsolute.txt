@@ -9,3 +9,14 @@ C:\Users\Octavio\Documents\GameMakerStudio2\Proyecto_Neuromarketing\Nueva librer
 C:\Users\Octavio\Documents\GameMakerStudio2\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.AssemblyInfo.cs
 C:\Users\Octavio\Documents\GameMakerStudio2\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.dll
 C:\Users\Octavio\Documents\GameMakerStudio2\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.pdb
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\bin\Debug\netcoreapp2.2\Suma de expresiones booleanas.deps.json
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\bin\Debug\netcoreapp2.2\Suma de expresiones booleanas.runtimeconfig.json
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\bin\Debug\netcoreapp2.2\Suma de expresiones booleanas.runtimeconfig.dev.json
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\bin\Debug\netcoreapp2.2\Suma de expresiones booleanas.dll
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\bin\Debug\netcoreapp2.2\Suma de expresiones booleanas.pdb
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.csprojAssemblyReference.cache
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.csproj.CoreCompileInputs.cache
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.AssemblyInfoInputs.cache
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.AssemblyInfo.cs
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.dll
+C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva libreria\Suma de expresiones booleanas\obj\Debug\netcoreapp2.2\Suma de expresiones booleanas.pdb
