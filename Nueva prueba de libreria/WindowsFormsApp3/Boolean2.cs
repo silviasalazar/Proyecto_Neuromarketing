@@ -133,6 +133,65 @@ namespace WindowsFormsApp3
             return expresion;
         }
 
+        public static bool AreReducible(List<int> expresion1, List<int> expresion2)
+        {
+            bool exp1Zeros = true, exp2Zeros = true;
+            bool condition1 = false, condition2 = false, condition3 = false;
+            //Comprobar que no tengan ceros en el
+            foreach (int element in expresion1)
+            {
+                if (element == 0)
+                    exp1Zeros = false;
+            }
+            foreach (int element in expresion2)
+            {
+                if (element == 0)
+                    exp2Zeros = false;
+            }
+            //Suma con expresiones sin ceros
+            if (exp1Zeros && exp2Zeros)
+            {
+                int differents = 0, twos1 = 0, twos2 = 0;
+                //Ver cuantos elementos diferentes hay entre las listas
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expresion1[i] != expresion2[i])
+                        differents++;
+                    if (expresion1[i] == 2)
+                        twos1++;
+                    else if (expresion2[i] == 2)
+                        twos2++;
+                }
+                if (differents == 0)
+                    condition1 = true;
+                else if (differents == 1 && ((twos1 == 1 && twos2 == 0) || (twos1 == 0 && twos2 == 1)))
+                {
+                    //List<int> temporalExp = new List<int>() { 0, 0, 0, 0 };
+                    condition2 = true;
+                }
+            }
+            /*Suma con una expresion con un 0 y otra sin 0s
+            *              
+            */
+            else if ((exp1Zeros && !exp2Zeros) || (!exp1Zeros && exp2Zeros))
+            {
+                int differents = 0, twos1 = 0, twos2 = 0;
+                //Ver cuantos elementos diferentes hay entre las listas
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expresion1[i] != expresion2[i])
+                        differents++;
+                    if (expresion1[i] == 2)
+                        twos1++;
+                    else if (expresion2[i] == 2)
+                        twos2++;
+                }
+                if (differents == 0)
+                    condition3 = true;
+            }
+            return condition1 || condition2 || condition3;
+        }
+
         public static string AB(List<int> expresionBooleana1, List<int> expresionBooleana2)
         {
             List<int> mov1 = new List<int>();
