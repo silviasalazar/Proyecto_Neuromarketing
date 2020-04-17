@@ -35,6 +35,7 @@
             this.B = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.D = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCalcularNuevaMedia = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewrValores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +90,22 @@
             this.D.HeaderText = "D";
             this.D.Name = "D";
             // 
+            // btnCalcularNuevaMedia
+            // 
+            this.btnCalcularNuevaMedia.Location = new System.Drawing.Point(90, 363);
+            this.btnCalcularNuevaMedia.Name = "btnCalcularNuevaMedia";
+            this.btnCalcularNuevaMedia.Size = new System.Drawing.Size(98, 45);
+            this.btnCalcularNuevaMedia.TabIndex = 4;
+            this.btnCalcularNuevaMedia.Text = "Calcular Nueva Media";
+            this.btnCalcularNuevaMedia.UseVisualStyleBackColor = true;
+            this.btnCalcularNuevaMedia.Click += new System.EventHandler(this.btnCalcularNuevaMedia_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCalcularNuevaMedia);
             this.Controls.Add(this.dataGridViewrValores);
             this.Controls.Add(this.txt_res);
             this.Controls.Add(this.button1);
@@ -113,6 +125,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn B;
         private System.Windows.Forms.DataGridViewTextBoxColumn C;
         private System.Windows.Forms.DataGridViewTextBoxColumn D;
+        private System.Windows.Forms.Button btnCalcularNuevaMedia;
     }
 }
 

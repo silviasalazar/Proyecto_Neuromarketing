@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boolean2.cs" />
     <Compile Include="Boolean.cs" />
+    <Compile Include="DataGridTo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

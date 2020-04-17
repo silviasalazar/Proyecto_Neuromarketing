@@ -76,5 +76,14 @@ namespace WindowsFormsApp3
         {
 
         }
+
+        private void btnCalcularNuevaMedia_Click(object sender, EventArgs e)
+        {
+            List<List<double>> matrix = new List<List<double>>();
+            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
+            MessageBox.Show(Booleanos.Media(matrix).ToString());
+        }
+
+
     }
 }

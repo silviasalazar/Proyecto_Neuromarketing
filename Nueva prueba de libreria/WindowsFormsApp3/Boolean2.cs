@@ -6,30 +6,11 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp3
 {
-    public static class Booleanos
+    public static class Booleanos2
     {
         public static double Media(List<double> datos)
         {
-            double mayor = 0, menor = 0, media;
-            /*
-             * Aquí me pareció que para evitar el if 
-             * mejor asigna los valores antes y empieza
-             * el ciclo desde 1 en vez de 0
-             */
-            /*
-           for (int i = 0; i < datos.Count; i++)
-           {
-               if (i == 0)
-               {
-                   Mayor = datos[i];
-                   Menor = datos[i];
-               }
-               else if (datos[i] > Mayor)
-                   Mayor = datos[i];
-               else if (datos[i] < Menor)
-                   Menor = datos[i];
-           }
-           */
+            double mayor = 0, menor = 0, media;            
             mayor = datos[0];
             menor = datos[0];
             for (int i = 1; i < datos.Count; i++)
@@ -77,14 +58,86 @@ namespace WindowsFormsApp3
             return pol;
         }
 
+        public static List<int> BooleanExpresionSum(List<int> expresion1, List<int> expresion2)
+        {
+            List<int> expresion = new List<int>();
+            bool exp1Zeros = true, exp2Zeros = true;
+            //Comprobar que no tengan ceros en el
+            foreach (int element in expresion1)
+            {
+                if(element == 0)                
+                    exp1Zeros = false;                
+            }
+            foreach (int element in expresion2)
+            {
+                if (element == 0)                
+                    exp2Zeros = false;                
+            }
+            //Suma con expresiones sin ceros
+            if(exp1Zeros && exp2Zeros)
+            {
+                int differents = 0, twos1 = 0, twos2 = 0;
+                //Ver cuantos elementos diferentes hay entre las listas
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expresion1[i] != expresion2[i])
+                        differents++;
+                    if (expresion1[i] == 2)                    
+                        twos1++;                    
+                    else if (expresion2[i] == 2)                    
+                        twos2++;                    
+                }
+                if (differents == 0)                
+                    expresion = expresion1;           
+                else if(differents == 1 && ((twos1 == 1 && twos2 == 0) || (twos1 == 0 && twos2 == 1)))
+                {
+                    List<int> temporalExp = new List<int>() { 0, 0, 0, 0 };
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (expresion1[i] != expresion2[i])
+                            temporalExp[i] = 0;
+                        else
+                            temporalExp[i] = expresion1[i];
+                    }
+                    expresion = temporalExp;
+                }
+            }            
+            /*Suma con una expresion con un 0 y otra sin 0s
+            *              
+            */
+            else if((exp1Zeros && !exp2Zeros) || (!exp1Zeros && exp2Zeros))
+            {
+                int differents = 0, twos1 = 0, twos2 = 0;
+                //Ver cuantos elementos diferentes hay entre las listas
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expresion1[i] != expresion2[i])
+                        differents++;
+                    if (expresion1[i] == 2)
+                        twos1++;
+                    else if (expresion2[i] == 2)
+                        twos2++;
+                }
+                if (differents == 0)
+                    expresion = expresion1;
+                List<int> temporalExp = new List<int>() { 0, 0, 0, 0 };
+                for (int i = 0; i < 4; i++)
+                {
+                    if (expresion1[i] == 0 || expresion2[i] == 0)
+                        temporalExp[i] = 0;
+                    else if(expresion1[i] == expresion2[i])
+                        temporalExp[i] = expresion1[i];                    
+                }
+                expresion = temporalExp;
+            }
+            return expresion;
+        }
+
         public static string AB(List<int> expresionBooleana1, List<int> expresionBooleana2)
         {
             List<int> mov1 = new List<int>();
             List<int> mov2 = new List<int>();
-            int c = 0;
-            //int apuntador = 0;
-            //Esta lista sirve para indicar que variables se van a eliminar
-            //a la hora de la simplificación
+            int c = 0;           
             List<int> variablesEliminadas = new List<int>();
 
             for (int i = 0; i < expresionBooleana1.Count; i++)
@@ -179,39 +232,7 @@ namespace WindowsFormsApp3
             string res = "";
 
             List<int> resnum = mov1;
-            resnum[apuntador] = 1;
-            /*
-            for (int i = 0; i < resnum.Count; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        if (resnum[i] != 1 && pol1[i] == 1)
-                            res = "A";
-                        else if (resnum[i] != 1 && pol1[i] == 2)
-                            res = "A'";
-                        break;
-                    case 1:
-                        if (resnum[i] != 1 && pol1[i] == 1)
-                            res = res + "B";
-                        else if (resnum[i] != 1 && pol1[i] == 2)
-                            res = res + "B'";
-                        break;
-                    case 2:
-                        if (resnum[i] != 1 && pol1[i] == 1)
-                            res = res + "C";
-                        else if (resnum[i] != 1 && pol1[i] == 2)
-                            res = res + "C'";
-                        break;
-                    case 3:
-                        if (resnum[i] != 1 && pol1[i] == 1)
-                            res = res + "D";
-                        else if (resnum[i] != 1 && pol1[i] == 2)
-                            res = res + "D'";
-                        break;
-                }
-            }           
-            */
+            resnum[apuntador] = 1;            
             for (int i = 0; i < resnum.Count(); i++)
             {
                 //Todos los casos tienen los mismos ifs entonces pongo el if primero
@@ -245,69 +266,8 @@ namespace WindowsFormsApp3
         }
 
         private static string Iguales(List<int> pol1, List<int> pol2)
-        {
-            
-            string res = "";
-            
-            //string res2 = "";
-            
-
-            /*
-            for (int i = 0; i < pol1.Count; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        if (pol1[i] != 0 && pol1[i] == 1)
-                            res1 = "A";
-                        else if (pol1[i] != 0 && pol1[i] == 2)
-                            res1 = "A'";
-
-                        if (pol2[i] != 0 && pol2[i] == 1)
-                            res2 = "A";
-                        else if (pol2[i] != 0 && pol2[i] == 2)
-                            res2 = "A'";
-                        break;
-                    case 1:
-                        if (pol1[i] != 0 && pol1[i] == 1)
-                            res1 = res1 + "B";
-                        else if (pol1[i] != 0 && pol1[i] == 2)
-                            res1 = res1 + "B'";
-
-                        if (pol2[i] != 0 && pol2[i] == 1)
-                            res2 = res2 + "B";
-                        else if (pol2[i] != 0 && pol2[i] == 2)
-                            res2 = res2 + "B'";
-                        break;
-                    case 2:
-                        if (pol1[i] != 0 && pol1[i] == 1)
-                            res1 = res1 + "C";
-                        else if (pol1[i] != 0 && pol1[i] == 2)
-                            res1 = res1 + "C'";
-
-                        if (pol2[i] != 0 && pol2[i] == 1)
-                            res2 = res2 + "C";
-                        else if (pol2[i] != 0 && pol2[i] == 2)
-                            res2 = res2 + "C'";
-                        break;
-                    case 3:
-                        if (pol1[i] != 0 && pol1[i] == 1)
-                            res1 = res1 + "D";
-                        else if (pol1[i] != 0 && pol1[i] == 2)
-                            res1 = res1 + "D'";
-
-                        if (pol2[i] != 0 && pol2[i] == 1)
-                            res2 = res2 + "D";
-                        else if (pol2[i] != 0 && pol2[i] == 2)
-                            res2 = res2 + "D'";
-                        break;
-                }
-            }*/
-            /*Igual que en el otro método, cambie todo por el mismo motivo
-             * Otra cosa, si pol1[i] == 0, nunca va a ser igual a 1 o a 2, por eso quité eso
-             * Otra cosa res = res + "A" se simplifica como res += "A"
-              */
-
+        {            
+            string res = ""; 
             for (int i = 0; i < pol1.Count(); i++)
             {
                 if (pol1[i] == 1)
@@ -331,20 +291,7 @@ namespace WindowsFormsApp3
                     else if (i == 3)
                         res += "!D";
                 }
-                /*
-                if (pol2[i] == 1 || pol2[i] == 2)
-                {
-                    if (i == 0)
-                        res2 = "A";
-                    else if (i == 1)
-                        res2 += "B";
-                    else if (i == 2)
-                        res2 += "C";
-                    else if (i == 3)
-                        res2 += "D";
-                }*/
             }
-            //string res = res1 + " + " + res2;
             return res;
         }
     }
