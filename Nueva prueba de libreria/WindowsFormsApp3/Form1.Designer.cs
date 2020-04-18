@@ -35,13 +35,13 @@
             this.B = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.D = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCalcularNuevaMedia = new System.Windows.Forms.Button();
+            this.btnLeerExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewrValores)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(90, 316);
+            this.button1.Location = new System.Drawing.Point(589, 101);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -51,9 +51,9 @@
             // 
             // txt_res
             // 
-            this.txt_res.Location = new System.Drawing.Point(350, 317);
+            this.txt_res.Location = new System.Drawing.Point(589, 62);
             this.txt_res.Name = "txt_res";
-            this.txt_res.Size = new System.Drawing.Size(314, 20);
+            this.txt_res.Size = new System.Drawing.Size(522, 20);
             this.txt_res.TabIndex = 2;
             // 
             // dataGridViewrValores
@@ -90,27 +90,26 @@
             this.D.HeaderText = "D";
             this.D.Name = "D";
             // 
-            // btnCalcularNuevaMedia
+            // btnLeerExcel
             // 
-            this.btnCalcularNuevaMedia.Location = new System.Drawing.Point(90, 363);
-            this.btnCalcularNuevaMedia.Name = "btnCalcularNuevaMedia";
-            this.btnCalcularNuevaMedia.Size = new System.Drawing.Size(98, 45);
-            this.btnCalcularNuevaMedia.TabIndex = 4;
-            this.btnCalcularNuevaMedia.Text = "Calcular Nueva Media";
-            this.btnCalcularNuevaMedia.UseVisualStyleBackColor = true;
-            this.btnCalcularNuevaMedia.Click += new System.EventHandler(this.btnCalcularNuevaMedia_Click);
+            this.btnLeerExcel.Location = new System.Drawing.Point(691, 101);
+            this.btnLeerExcel.Name = "btnLeerExcel";
+            this.btnLeerExcel.Size = new System.Drawing.Size(75, 23);
+            this.btnLeerExcel.TabIndex = 4;
+            this.btnLeerExcel.Text = "Leer excel";
+            this.btnLeerExcel.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCalcularNuevaMedia);
+            this.ClientSize = new System.Drawing.Size(1157, 592);
+            this.Controls.Add(this.btnLeerExcel);
             this.Controls.Add(this.dataGridViewrValores);
             this.Controls.Add(this.txt_res);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calcular fórmula";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewrValores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -125,7 +124,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn B;
         private System.Windows.Forms.DataGridViewTextBoxColumn C;
         private System.Windows.Forms.DataGridViewTextBoxColumn D;
-        private System.Windows.Forms.Button btnCalcularNuevaMedia;
+        private System.Windows.Forms.Button btnLeerExcel;
     }
 }
 

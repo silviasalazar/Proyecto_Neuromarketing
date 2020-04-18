@@ -20,56 +20,27 @@ namespace WindowsFormsApp3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(dataGridViewrValores.Rows.Count >= 2) {
-                Random num = new Random();
-
-                double suma = 0;
-                
-                List<double> datos1 =  new List<double>();
-
-                List<double> datos2 = new List<double>();
-
-                List<double> datos12 = new List<double>();
-
-                List<int> pol1 = new List<int>();
-
-                List<int> pol2 = new List<int>();
-
-                //Booleanos boleano = new Booleanos();
-
-                for(int i = 0; i < 4; i++)
+            List<List<double>> matrix = new List<List<double>>();
+            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
+            double media = Booleanos.Media(matrix);
+            MessageBox.Show(media.ToString());
+            try
+            {
+                BooleanExpresionList bel = new BooleanExpresionList();
+                for (int i = 0; i < matrix.Count; i++)
                 {
-                    datos1.Add(Convert.ToDouble(dataGridViewrValores.Rows[0].Cells[i].Value));
-                    datos2.Add(Convert.ToDouble(dataGridViewrValores.Rows[1].Cells[i].Value));
+                    BooleanExpresion be = new BooleanExpresion(Booleanos2.Polaridad(matrix[i], media));
+                    //be.SetValues();
+                    bel.Add(be);
                 }
-
-                /*
-                datos1.Add(5);
-                datos1.Add(6);
-                datos1.Add(3);
-                datos1.Add(5);
-                datos2.Add(5);
-                datos2.Add(5);
-                datos2.Add(5);
-                datos2.Add(5);
-                */
-
-                for (int i = 0; i < 4; i++)
-                {
-                    datos12.Add(datos1[i]);
-                    datos12.Add(datos2[i]);
-                }
-
-                double media = Booleanos.Media(datos12);
-
-                pol1 = Booleanos.Polaridad(datos1, media);
-
-                pol2 = Booleanos.Polaridad(datos2, media);
-
-                txt_res.Text = Booleanos.AB(pol1, pol2);
-
+                bel.IterativeSimplify();
+                // bel.IterativeSimplify();
+                txt_res.Text = bel.ToString();
             }
-            
+            catch(Exception exception)
+            {
+                MessageBox.Show("Ocurrió un error inesperado");
+            }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -92,6 +63,7 @@ namespace WindowsFormsApp3
                     //be.SetValues();
                     bel.Add(be);
                 }
+                bel.IterativeSimplify();
                 // bel.IterativeSimplify();
                 txt_res.Text = bel.ToString();
             }
