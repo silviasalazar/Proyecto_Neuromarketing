@@ -24,10 +24,7 @@ namespace WindowsFormsApp3
         public BooleanExpresion(List<int> values)
         {
             ValueList = values;
-            A = 0;
-            B = 0;
-            C = 0;
-            D = 0;
+            SetValues();
         }
         public BooleanExpresion(int a, int b, int c, int d)
         {

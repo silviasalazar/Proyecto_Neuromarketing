@@ -24,8 +24,8 @@ namespace WindowsFormsApp3
                 }
                 matrix.Add(doubles);
             }
-            if(matrix[0].Count != matrix.Count)            
-                matrix.RemoveAt(matrix.Count - 1);            
+            //if(matrix[0].Count == matrix.Count)            
+            matrix.RemoveAt(matrix.Count - 1);            
             return matrix;
         }
     }

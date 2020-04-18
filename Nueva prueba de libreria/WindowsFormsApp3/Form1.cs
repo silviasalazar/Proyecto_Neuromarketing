@@ -89,6 +89,7 @@ namespace WindowsFormsApp3
                 for(int i = 0; i < matrix.Count; i++)
                 {
                     BooleanExpresion be = new BooleanExpresion(Booleanos2.Polaridad(matrix[i], media));
+                    //be.SetValues();
                     bel.Add(be);
                 }
                 // bel.IterativeSimplify();

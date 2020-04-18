@@ -22,6 +22,11 @@ namespace WindowsFormsApp3
                 Condicion 3: expresion completa y no completa, en la cual no tienen cantidades negativas.
                 Condicion 4: expresiones similares, ambas positivas
                 Condicion 5: expresiones similares, en las cuales una cuenta con una variable negativa.
+                Condicion 6: expresiones completas, iguales, todas las variables negativas.
+                Condicion 7: expresiones completas, en las cuales se cuenta con una variable positiva
+                Condicion 8: expresion completa y no completa, en la cual solo se tienen cantidades negativas
+                Condicion 9: expresiones similares, ambas negativas
+                Condicion 10: expresiones similares, en las cuales una cuenta con una variable negativa
             */
 
             //Comprobar que las expresiones sean completas
@@ -42,12 +47,19 @@ namespace WindowsFormsApp3
                 if (BothPositive(expresion1, expresion2)) return true;
                 //Comprobar si una variable es negativa
                 else if (AlmostOneNegative(expresion1, expresion2)) return true;
+                //Comprobar si todas son negativas
+                else if (BothNegative(expresion1, expresion2)) return true;
+                //Comprobar si solo hay una variable positiva
+                else if (AlmostOnePositive(expresion2, expresion2)) return true;
             }
 
-            //Una expresion completa y una incompleta en la cual no tienen cantidades negativas.
+            //Una expresion completa y una incompleta
             else if ((isComplete1 && !isComplete2) || (!isComplete1 && isComplete2))
             {
+                // en la cual no tienen cantidades negativas.
                 if (BothPositive(expresion1, expresion2)) return true;
+                //En la cuial no hay positivas
+                else if (BothNegative(expresion1, expresion2)) return true;
             }
 
             //Si las expresiones son incompletas
@@ -64,6 +76,10 @@ namespace WindowsFormsApp3
                     if (BothPositive(expresion1, expresion2)) return true;
                     //Si hay una negativa
                     else if (AlmostOneNegative(expresion1, expresion2)) return true;
+                    //Si ambas son negativas
+                    else if (BothNegative(expresion1, expresion2)) return true;
+                    //Si hay una positiva
+                    else if (AlmostOnePositive(expresion1, expresion2)) return true;
                 }
             }
             return false;
@@ -83,6 +99,15 @@ namespace WindowsFormsApp3
             return condition;
         }
 
+        private static bool BothNegative(List<int> expresion1, List<int> expresion2)
+        {
+            bool condition = true;
+            for (int i = 0; i < 4; i++)
+                if (expresion1[i] == 1 || expresion2[i] == 1)
+                    condition = false;
+            return condition;
+        }
+
         private static bool AlmostOneNegative(List<int> expresion1, List<int> expresion2)
         {
             int negatives = 0;
@@ -90,6 +115,16 @@ namespace WindowsFormsApp3
                 if (expresion1[i] == 2 || expresion2[i] == 2)
                     negatives++;
             if (negatives == 1) return true;
+            else return false;
+        }
+
+        private static bool AlmostOnePositive(List<int> expresion1, List<int> expresion2)
+        {
+            int positive = 0;
+            for (int i = 0; i < 4; i++)
+                if (expresion1[i] == 1 || expresion2[i] == 1)
+                    positive++;
+            if (positive == 1) return true;
             else return false;
         }
 
@@ -107,34 +142,12 @@ namespace WindowsFormsApp3
             {
                 if (element == 0)
                     isComplete2 = false;
-            }
-            //Expresiones completas
-            if (isComplete1 && isComplete2)
-            {
-                //Comprobar si todas las variables son positivas                            
-                if (BothPositive(expresion1, expresion2))
-                {
-                    be.ValueList = expresion1;
-                    be.SetValues();
-                    return be;
-                }
-                //Comprobar si una variable es negativa
-                else if (AlmostOneNegative(expresion1, expresion2))
-                {
-                    List<int> list = new List<int> { 1, 1, 1, 1 };
-                    for (int i = 0; i < 4; i++)
-                        if (expresion1[i] == 2 || expresion2[i] == 2)
-                            list[i] = 0;
-                    be.ValueList = list;
-                    be.SetValues();
-                    return be;
-                }
-            }
+            }                        
 
             //Una expresion completa y una incompleta en la cual no tienen cantidades negativas.
-            else if ((isComplete1 && !isComplete2) || (!isComplete1 && isComplete2))
+            if ((isComplete1 && !isComplete2) || (!isComplete1 && isComplete2))
             {
-                if (BothPositive(expresion1, expresion2))
+                if (BothPositive(expresion1, expresion2) || BothNegative(expresion1, expresion2))
                 {
                     if (isComplete1)
                     {
@@ -152,10 +165,10 @@ namespace WindowsFormsApp3
             }
 
             //Si las expresiones son incompletas
-            else if (!isComplete1 && !isComplete2)
+            else
             {
-                //Si ambas son positivas
-                if (BothPositive(expresion1, expresion2))
+                //Si ambas son positivas o negativas
+                if (BothPositive(expresion1, expresion2) || BothNegative(expresion1, expresion2))
                 {
                     be.ValueList = expresion1;
                     be.SetValues();
@@ -167,6 +180,17 @@ namespace WindowsFormsApp3
                     List<int> list = expresion1;
                     for (int i = 0; i < 4; i++)
                         if (expresion1[i] == 2 || expresion2[i] == 2)
+                            list[i] = 0;
+                    be.ValueList = list;
+                    be.SetValues();
+                    return be;
+                }           
+                //Si hay una positiva
+                else if (AlmostOnePositive(expresion1, expresion2))
+                {
+                    List<int> list = expresion1;
+                    for (int i = 0; i < 4; i++)
+                        if (expresion1[i] == 1 || expresion2[i] == 1)
                             list[i] = 0;
                     be.ValueList = list;
                     be.SetValues();

@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Octavio Salasar\\.nuget\\packages\\": {},
+    "C:\\Users\\Octavio\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Octavio Salasar\\Documents\\GitHub\\Proyecto_Neuromarketing\\Nueva libreria\\Suma de expresiones booleanas\\Suma de expresiones booleanas.csproj",
+      "projectUniqueName": "c:\\Users\\Octavio\\Documents\\GameMakerStudio2\\Proyecto_Neuromarketing\\Nueva libreria\\Suma de expresiones booleanas\\Suma de expresiones booleanas.csproj",
       "projectName": "Suma de expresiones booleanas",
-      "projectPath": "C:\\Users\\Octavio Salasar\\Documents\\GitHub\\Proyecto_Neuromarketing\\Nueva libreria\\Suma de expresiones booleanas\\Suma de expresiones booleanas.csproj",
-      "packagesPath": "C:\\Users\\Octavio Salasar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Octavio Salasar\\Documents\\GitHub\\Proyecto_Neuromarketing\\Nueva libreria\\Suma de expresiones booleanas\\obj\\",
+      "projectPath": "c:\\Users\\Octavio\\Documents\\GameMakerStudio2\\Proyecto_Neuromarketing\\Nueva libreria\\Suma de expresiones booleanas\\Suma de expresiones booleanas.csproj",
+      "packagesPath": "C:\\Users\\Octavio\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Octavio\\Documents\\GameMakerStudio2\\Proyecto_Neuromarketing\\Nueva libreria\\Suma de expresiones booleanas\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Octavio Salasar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Octavio\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
