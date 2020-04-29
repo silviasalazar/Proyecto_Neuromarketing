@@ -39,7 +39,7 @@ namespace WindowsFormsApp3
             }
             catch(Exception exception)
             {
-                MessageBox.Show(exception.Message);
+                MessageBox.Show(exception.StackTrace);
             }
         }
 

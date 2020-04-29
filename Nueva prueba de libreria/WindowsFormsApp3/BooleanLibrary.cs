@@ -50,7 +50,7 @@ namespace WindowsFormsApp3
                 //Comprobar si todas son negativas
                 else if (BothNegative(expresion1, expresion2)) return true;
                 //Comprobar si solo hay una variable positiva
-                else if (AlmostOnePositive(expresion2, expresion2)) return true;
+                else if (AlmostOnePositive(expresion1, expresion2)) return true;
             }
 
             //Una expresion completa y una incompleta
