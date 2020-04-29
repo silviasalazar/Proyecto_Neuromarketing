@@ -47,7 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Boolean2.cs" />
-    <Compile Include="Boolean.cs" />
     <Compile Include="BooleanExpresion.cs" />
     <Compile Include="BooleanExpresionList.cs" />
     <Compile Include="BooleanLibrary.cs" />

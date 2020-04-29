@@ -22,7 +22,7 @@ namespace WindowsFormsApp3
         {
             List<List<double>> matrix = new List<List<double>>();
             matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
-            double media = Booleanos.Media(matrix);
+            double media = Booleanos2.Media(matrix);
             MessageBox.Show(media.ToString());
             try
             {
@@ -52,7 +52,7 @@ namespace WindowsFormsApp3
         {
             List<List<double>> matrix = new List<List<double>>();
             matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
-            double media = Booleanos.Media(matrix);
+            double media = Booleanos2.Media(matrix);
             MessageBox.Show(media.ToString());
             if (dataGridViewrValores.Rows.Count >= 2)
             {
