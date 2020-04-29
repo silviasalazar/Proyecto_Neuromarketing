@@ -1,6 +1,0 @@
-C:\Users\jace3\source\repos\Algebra_Booleana\Algebra_Booleana\bin\Debug\Algebra_Booleana.dll
-C:\Users\jace3\source\repos\Algebra_Booleana\Algebra_Booleana\bin\Debug\Algebra_Booleana.pdb
-C:\Users\jace3\source\repos\Algebra_Booleana\Algebra_Booleana\obj\Debug\Algebra_Booleana.csprojAssemblyReference.cache
-C:\Users\jace3\source\repos\Algebra_Booleana\Algebra_Booleana\obj\Debug\Algebra_Booleana.csproj.CoreCompileInputs.cache
-C:\Users\jace3\source\repos\Algebra_Booleana\Algebra_Booleana\obj\Debug\Algebra_Booleana.dll
-C:\Users\jace3\source\repos\Algebra_Booleana\Algebra_Booleana\obj\Debug\Algebra_Booleana.pdb
