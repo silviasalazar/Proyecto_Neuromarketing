@@ -26,12 +26,17 @@ namespace WindowsFormsApp3
             MessageBox.Show(media.ToString());
             try
             {
+                pgsBarDesarrollo.Maximum = matrix.Count;
+                pgsBarDesarrollo.Value = 0;
+                pgsBarDesarrollo.Step = 1;
                 BooleanExpresionList bel = new BooleanExpresionList();
                 for (int i = 0; i < matrix.Count; i++)
                 {
                     BooleanExpresion be = new BooleanExpresion(Booleanos2.Polaridad(matrix[i], media));
                     //be.SetValues();
                     bel.Add(be);
+                    pgsBarDesarrollo.PerformStep();
+
                 }
                 bel.IterativeSimplify();
                 // bel.IterativeSimplify();

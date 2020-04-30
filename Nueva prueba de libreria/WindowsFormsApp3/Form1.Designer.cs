@@ -35,6 +35,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pgsBarDesarrollo = new System.Windows.Forms.ProgressBar();
+            this.lblDesarrollo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewrValores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,17 +90,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(801, 108);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(803, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 13);
+            this.label1.Size = new System.Drawing.Size(44, 20);
             this.label1.TabIndex = 6;
             this.label1.Text = "Ruta";
+            // 
+            // pgsBarDesarrollo
+            // 
+            this.pgsBarDesarrollo.Location = new System.Drawing.Point(589, 147);
+            this.pgsBarDesarrollo.Name = "pgsBarDesarrollo";
+            this.pgsBarDesarrollo.Size = new System.Drawing.Size(443, 23);
+            this.pgsBarDesarrollo.TabIndex = 7;
+            // 
+            // lblDesarrollo
+            // 
+            this.lblDesarrollo.AutoSize = true;
+            this.lblDesarrollo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesarrollo.Location = new System.Drawing.Point(1038, 150);
+            this.lblDesarrollo.Name = "lblDesarrollo";
+            this.lblDesarrollo.Size = new System.Drawing.Size(81, 20);
+            this.lblDesarrollo.TabIndex = 8;
+            this.lblDesarrollo.Text = "Desarrollo";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 592);
+            this.Controls.Add(this.lblDesarrollo);
+            this.Controls.Add(this.pgsBarDesarrollo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnLeerExcel);
@@ -121,6 +143,8 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar pgsBarDesarrollo;
+        private System.Windows.Forms.Label lblDesarrollo;
     }
 }
 
