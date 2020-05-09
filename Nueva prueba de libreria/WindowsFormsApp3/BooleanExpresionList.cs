@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WindowsFormsApp3
 {
@@ -31,6 +32,22 @@ namespace WindowsFormsApp3
 
         public void Simplify()
         {
+            for (int i = 0; i < Expresions.Count - 1; i++)
+            {
+                for (int j = i + 1; j < Expresions.Count; j++)
+                {
+                    if (BooleanLibrary.AreReducible(Expresions[i], Expresions[j]))
+                    {
+                        Expresions[i] = BooleanLibrary.Reduction(Expresions[i], Expresions[j]);
+                        Expresions.RemoveAt(j);
+                    }
+                }
+            }
+        }
+
+        public void SimplifyFromArchive(string fileRoute, int limit)
+        {
+            StreamReader sr = new StreamReader(fileRoute);
             for (int i = 0; i < Expresions.Count - 1; i++)
             {
                 for (int j = i + 1; j < Expresions.Count; j++)
