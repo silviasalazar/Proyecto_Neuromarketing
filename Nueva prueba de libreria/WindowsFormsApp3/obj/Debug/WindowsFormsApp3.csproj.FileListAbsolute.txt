@@ -40,3 +40,13 @@ C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva prueba d
 C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
 C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
 C:\Users\Octavio Salasar\Documents\GitHub\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe.config
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.exe
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\bin\Debug\WindowsFormsApp3.pdb
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csprojAssemblyReference.cache
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Form1.resources
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.Properties.Resources.resources
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.GenerateResource.cache
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.csproj.CoreCompileInputs.cache
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.exe
+C:\Users\Raul\Desktop\Ing en sistemas computacionales\Semestre 4\Topicos avanzados de programacion\Proyecto_Neuromarketing\Nueva prueba de libreria\WindowsFormsApp3\obj\Debug\WindowsFormsApp3.pdb

@@ -20,28 +20,25 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Calcular_Click(object sender, EventArgs e)
         {
-            if (fileRute.Length > 0){
+            if (fileRute != null && fileRute != "")
+            {
                 GenerateDataGridOutput();
-            }else{
+            }
+            else
+            {
                 GenerateDataGrid();
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
 
         private void GenerateDataGrid()
         {
             List<List<double>> matrix = new List<List<double>>();
-            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
+            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewValores);
             double media = Booleanos2.Media(matrix);
             MessageBox.Show(media.ToString());
-            //Si se selecciona un archivo de salida            
+            //Si no se selecciona un archivo de salida   
             try
             {
                 pgsBarDesarrollo.Maximum = matrix.Count;
@@ -52,10 +49,12 @@ namespace WindowsFormsApp3
                 {
                     BooleanExpresion be = new BooleanExpresion(Booleanos2.Polaridad(matrix[i], media));
                     //be.SetValues();
-                    bel.Add(be);
+                    bel.Add2(be);
                     pgsBarDesarrollo.PerformStep();
-
                 }
+
+                bel.SimplificaExpRepetidas();
+
                 bel.IterativeSimplify();
                 // bel.IterativeSimplify();
                 txt_res.Text = bel.ToString();
@@ -69,15 +68,16 @@ namespace WindowsFormsApp3
         private void GenerateDataGridOutput()
         {
             List<List<double>> matrix = new List<List<double>>();
-            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
+            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewValores);
             double media = Booleanos2.Media(matrix);
             MessageBox.Show(media.ToString());
             //Si se selecciona un archivo de salida            
+
+            pgsBarDesarrollo.Maximum = matrix.Count;
+            pgsBarDesarrollo.Value = 0;
+            pgsBarDesarrollo.Step = 1;
             try
             {
-                pgsBarDesarrollo.Maximum = matrix.Count;
-                pgsBarDesarrollo.Value = 0;
-                pgsBarDesarrollo.Step = 1;
                 BooleanExpresionList bel = new BooleanExpresionList();
                 StreamWriter sw = new StreamWriter(fileRute);
                 for (int i = 0; i < matrix.Count; i++)
@@ -85,12 +85,17 @@ namespace WindowsFormsApp3
                     BooleanExpresion be = new BooleanExpresion(Booleanos2.Polaridad(matrix[i], media));
                     //be.SetValues();
                     bel.Add(be);
-                    sw.WriteLine(be.ToString());
+                    //sw.WriteLine(be.ToString());
                     pgsBarDesarrollo.PerformStep();
+                }
 
+                bel.SimplificaExpRepetidas();
+
+                for (int i = 0; i < bel.Expresions.Count; i++)
+                {
+                    sw.WriteLine(bel.Expresions.ToString());
                 }
                 //bel.SimplifyFromArchive(fileRute, matrix.Count);
-                //bel.IterativeSimplify();
                 //bel.IterativeSimplify();
                 //txt_res.Text = bel.ToString();
             }
@@ -103,10 +108,10 @@ namespace WindowsFormsApp3
         private void btnCalcularNuevaMedia_Click(object sender, EventArgs e)
         {
             List<List<double>> matrix = new List<List<double>>();
-            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewrValores);
+            matrix = DataGridViewTo.ListOfListOfDoubles(dataGridViewValores);
             double media = Booleanos2.Media(matrix);
             MessageBox.Show(media.ToString());
-            if (dataGridViewrValores.Rows.Count >= 2)
+            if (dataGridViewValores.Rows.Count >= 2)
             {
                 BooleanExpresionList bel = new BooleanExpresionList();
                 for(int i = 0; i < matrix.Count; i++)
@@ -163,7 +168,7 @@ namespace WindowsFormsApp3
             }
             if (dt.Rows.Count > 0)
             {                
-                dataGridViewrValores.DataSource = dt;
+                dataGridViewValores.DataSource = dt;
             }
 
         }
@@ -174,5 +179,7 @@ namespace WindowsFormsApp3
             fileRute = openFileDialog1.FileName;
             txtBoxOut.Text = fileRute;
         }
+
+
     }
 }

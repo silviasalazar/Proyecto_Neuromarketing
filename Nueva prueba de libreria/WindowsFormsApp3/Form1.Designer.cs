@@ -30,7 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.txt_res = new System.Windows.Forms.TextBox();
-            this.dataGridViewrValores = new System.Windows.Forms.DataGridView();
+            this.dataGridViewValores = new System.Windows.Forms.DataGridView();
             this.btnLeerExcel = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,7 +40,7 @@
             this.btnSalida = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtBoxOut = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewrValores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValores)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -51,7 +51,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Calcular";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Calcular_Click);
             // 
             // txt_res
             // 
@@ -60,13 +60,13 @@
             this.txt_res.Size = new System.Drawing.Size(522, 20);
             this.txt_res.TabIndex = 2;
             // 
-            // dataGridViewrValores
+            // dataGridViewValores
             // 
-            this.dataGridViewrValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewrValores.Location = new System.Drawing.Point(90, 62);
-            this.dataGridViewrValores.Name = "dataGridViewrValores";
-            this.dataGridViewrValores.Size = new System.Drawing.Size(473, 482);
-            this.dataGridViewrValores.TabIndex = 3;
+            this.dataGridViewValores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewValores.Location = new System.Drawing.Point(90, 62);
+            this.dataGridViewValores.Name = "dataGridViewValores";
+            this.dataGridViewValores.Size = new System.Drawing.Size(473, 482);
+            this.dataGridViewValores.TabIndex = 3;
             // 
             // btnLeerExcel
             // 
@@ -158,12 +158,12 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnLeerExcel);
-            this.Controls.Add(this.dataGridViewrValores);
+            this.Controls.Add(this.dataGridViewValores);
             this.Controls.Add(this.txt_res);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Calcular fórmula";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewrValores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,7 +172,7 @@
         #endregion
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_res;
-        private System.Windows.Forms.DataGridView dataGridViewrValores;
+        private System.Windows.Forms.DataGridView dataGridViewValores;
         private System.Windows.Forms.Button btnLeerExcel;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox1;

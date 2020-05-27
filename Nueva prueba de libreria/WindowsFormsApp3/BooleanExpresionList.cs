@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.IO;
 
 namespace WindowsFormsApp3
@@ -28,6 +29,33 @@ namespace WindowsFormsApp3
                 }
             }
             Expresions.Add(booleanExpresion);
+        }
+        public void Add2(BooleanExpresion booleanExpresion)
+        {
+            Expresions.Add(booleanExpresion);
+        }
+
+        public void SimplificaExpRepetidas()
+        {
+            List<BooleanExpresion> Temp = new List<BooleanExpresion>();
+            Temp.Add(Expresions[0]);
+            bool ExpRepetida = false;
+
+            for (int i = 1; i < Expresions.Count; i++)
+            {
+                for(int k = 0; k < Temp.Count; k++)
+                {
+                    if (BooleanLibrary.BothEqual(Expresions[i].ValueList , Temp[k].ValueList))
+                    {
+                        ExpRepetida = true;
+                        break;
+                    }
+                }
+                if (ExpRepetida==false) Temp.Add(Expresions[i]);
+                ExpRepetida = false;
+            }
+            Expresions = Temp;
+            MessageBox.Show("Expresiones reducidas a: "+Expresions.Count.ToString());
         }
 
         public void Simplify()

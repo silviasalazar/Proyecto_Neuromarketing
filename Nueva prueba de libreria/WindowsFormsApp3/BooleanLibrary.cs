@@ -108,6 +108,15 @@ namespace WindowsFormsApp3
             return condition;
         }
 
+        public static bool BothEqual(List<int> expresion1, List<int> expresion2)
+        {
+            bool condition = false;
+            if (expresion1[0] == expresion2[0] && expresion1[1] == expresion2[1] &&
+                expresion1[2] == expresion2[2] && expresion1[3] == expresion2[3])
+                condition = true;
+            return condition;
+        }
+
         private static bool AlmostOneNegative(List<int> expresion1, List<int> expresion2)
         {
             int negatives = 0;
